@@ -18,16 +18,27 @@ const ListRooms: React.FC = () => {
             .then(data => setRooms(data));
     }, []);
 
+    // return (
+    //     <div>   
+    //         <h1>List of Rooms</h1>
+    //         {rooms.map(room => (
+    //             <div key={room.id}>
+    //                 <h2>{room.nomorKamar}</h2>
+    //                 <p>{room.hargaPerBulan}</p>
+    //                 <p>{room.isOccupied ? 'Occupied' : 'Available'}</p>
+    //                 <p>{room.ac ? 'AC' : 'No AC'}</p>
+    //                 <p>{room.kamarMandiDalam ? 'Bathroom Inside' : 'No Bathroom Inside'}</p>
+    //             </div>
+    //         ))}
+    //     </div>
+    // );
+
     return (
         <div>   
             <h1>List of Rooms</h1>
             {rooms.map(room => (
                 <div key={room.id}>
                     <h2>{room.nomorKamar}</h2>
-                    <p>{room.hargaPerBulan}</p>
-                    <p>{room.isOccupied ? 'Occupied' : 'Available'}</p>
-                    <p>{room.ac ? 'AC' : 'No AC'}</p>
-                    <p>{room.kamarMandiDalam ? 'Bathroom Inside' : 'No Bathroom Inside'}</p>
                 </div>
             ))}
         </div>
