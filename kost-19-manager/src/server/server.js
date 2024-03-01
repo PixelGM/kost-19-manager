@@ -20,11 +20,12 @@ const connection = createConnection({
 connection.connect();
 
 app.post('/api/rooms', (req, res) => {
-  const { pricePerMonth, isOccupied, tenantName, tenantPhone, tenantNIK } = req.body;
-  const sql = 'INSERT INTO rooms (pricePerMonth, isOccupied, tenantName, tenantPhone, tenantNIK) VALUES (?, ?, ?, ?, ?)';
+  const { nomorKamar, hargaPerBulan, isOccupied, ac, kamarMandiDalam } = req.body;
+  const sql = 'INSERT INTO rooms (nomorKamar, hargaPerBulan, isOccupied, ac, kamarMandiDalam) VALUES (?, ?, ?, ?, ?)';
   
-  connection.query(sql, [pricePerMonth, isOccupied, tenantName, tenantPhone, tenantNIK], (error, results) => {
+  connection.query(sql, [nomorKamar, hargaPerBulan, isOccupied, ac, kamarMandiDalam], (error, results) => {
     if (error) {
+      console.error(error);
       return res.status(500).send('Error adding room');
     }
     res.status(200).send('Room added successfully');

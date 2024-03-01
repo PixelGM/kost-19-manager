@@ -5,11 +5,11 @@ import './App.css'
 
 function App() {
   const [room, setRoom] = useState({
-    pricePerMonth: '',
+    nomorKamar: '',
+    hargaPerBulan: '',
     isOccupied: false,
-    tenantName: '',
-    tenantPhone: '',
-    tenantNIK: ''
+    ac: false,
+    kamarMandiDalam: false
   });
 
   const handleChange = (e) => {
@@ -45,15 +45,15 @@ function App() {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Price per Month:
+        Nomor Kamar:
         <input
           type="number"
-          name="pricePerMonth"
-          value={room.pricePerMonth}
+          name="nomorKamar"
+          value={room.nomorKamar}
           onChange={handleChange}
         />
       </label>
-      <label>
+      {/* <label>
         Is Occupied:
         <input
           type="checkbox"
@@ -61,33 +61,43 @@ function App() {
           checked={room.isOccupied}
           onChange={handleChange}
         />
-      </label>
+      </label> */}
+
       <label>
-        Tenant Name:
+        Harga / Bulan:
         <input
-          type="text"
-          name="tenantName"
-          value={room.tenantName}
+          type="number"
+          name="hargaPerBulan"
+          value={room.hargaPerBulan}
           onChange={handleChange}
         />
       </label>
       <label>
-        Tenant Phone:
-        <input
-          type="text"
-          name="tenantPhone"
-          value={room.tenantPhone}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Tenant NIK:
-        <input
-          type="text"
-          name="tenantNIK"
-          value={room.tenantNIK}
-          onChange={handleChange}
-        />
+        Fasilitas:
+        <ul>
+          <li>
+            <label>
+              AC
+              <input
+                type="checkbox"
+                name="ac" // changed from "AC"
+                checked={room.ac}
+                onChange={handleChange}
+              />
+            </label>
+          </li>
+          <li>
+            <label>
+            Kamar Mandi Dalam
+              <input
+                type="checkbox"
+                name="kamarMandiDalam" // changed from "Kamar Mandi Dalam"
+                checked={room.kamarMandiDalam}
+                onChange={handleChange}
+              />
+            </label>
+          </li>
+        </ul>
       </label>
       <button type="submit">Add New Room</button>
     </form>
