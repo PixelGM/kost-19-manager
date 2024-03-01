@@ -32,6 +32,18 @@ app.post('/api/rooms', (req, res) => {
   });
 });
 
+app.get('/api/rooms', (req, res) => {
+  const sql = 'SELECT * FROM rooms';
+
+  connection.query(sql, (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).send('Error fetching rooms');
+    }
+    res.status(200).json(results);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
