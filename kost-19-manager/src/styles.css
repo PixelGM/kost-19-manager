@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Button */
+button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #646cff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 300ms;
+  margin-bottom: 1vh;
+}

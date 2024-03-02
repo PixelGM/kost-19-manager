@@ -7,6 +7,6 @@ import ListRooms from './ListRooms.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <NewRoom />
+    <ListRooms />
   </React.StrictMode>,
 )
