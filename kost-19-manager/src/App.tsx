@@ -7,6 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* List of Routes */}
         <Route path="/create/" element={<NewRoom />} />
         <Route path="/" element={<ListRooms />} />
         {/* Define other routes here */}
