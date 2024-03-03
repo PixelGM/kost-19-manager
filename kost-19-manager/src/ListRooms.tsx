@@ -14,10 +14,12 @@ const ListRooms: React.FC = () => {
     const [rooms, setRooms] = useState<Room[]>([]);
 
     useEffect(() => {
-        {/* API Location */}
         fetch('http://localhost:3001/api/rooms')
             .then(response => response.json())
-            .then(data => setRooms(data));
+            .then(data => {
+                const sortedRooms = data.sort((a: Room, b: Room) => parseInt(a.nomorKamar) - parseInt(b.nomorKamar));
+                setRooms(sortedRooms);
+            });
     }, []);
 
     return (
