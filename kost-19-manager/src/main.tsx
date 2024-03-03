@@ -4,9 +4,10 @@ import './index.css'
 
 import NewRoom from './NewRoom.tsx'
 import ListRooms from './ListRooms.tsx'
+import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ListRooms />
+    <App />
   </React.StrictMode>,
 )
