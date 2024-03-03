@@ -22,12 +22,17 @@ const ListRooms: React.FC = () => {
             });
     }, []);
 
+    const handleRoomClick = (nomorKamar: string) => {
+        const url = `${window.location.origin}/room/${nomorKamar}`;
+        window.open(url, '_blank');
+    };
+
     return (
         <div>   
             <h1>List of Rooms</h1>
             {rooms.map(room => (
                 <div key={room.id}>
-                    <button>{room.nomorKamar}</button>
+                    <button onClick={() => handleRoomClick(room.nomorKamar)}>{room.nomorKamar}</button>
                     {/* Other room details */}
                 </div>
             ))}
