@@ -30,16 +30,26 @@ const ListRooms: React.FC = () => {
 
     return (
         <div>
-            {/* Header Template */}
             <Header />
-               
             <h1>List of Rooms</h1>
-            {rooms.map(room => (
-                <div key={room.id}>
-                    <button onClick={() => handleRoomClick(room.nomorKamar)}>{room.nomorKamar}</button>
-                    {/* Other room details */}
-                </div>
-            ))}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {rooms.map(room => (
+                        <tr 
+                            key={room.id} 
+                            onClick={() => handleRoomClick(room.nomorKamar)} 
+                            style={{cursor: 'pointer'}}
+                        >
+                            <td>{room.nomorKamar}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
