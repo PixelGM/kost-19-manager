@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles.css'
+import Header from './Header';
 
 function NewRoom() {
   const [room, setRoom] = useState({
@@ -43,7 +44,11 @@ function NewRoom() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+      {/* Header Template */}
+      <Header />
+      
+      <form onSubmit={handleSubmit}>
       <label>
         Nomor Kamar:
         <input
@@ -101,6 +106,7 @@ function NewRoom() {
       </label>
       <button type="submit">Add New Room</button>
     </form>
+    </div>
   );
 }
 

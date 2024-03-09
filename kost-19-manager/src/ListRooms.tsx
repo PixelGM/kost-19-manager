@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
+import Header from './Header';
 
 interface Room {
     id: number;
@@ -28,7 +29,10 @@ const ListRooms: React.FC = () => {
     };
 
     return (
-        <div>   
+        <div>
+            {/* Header Template */}
+            <Header />
+               
             <h1>List of Rooms</h1>
             {rooms.map(room => (
                 <div key={room.id}>
